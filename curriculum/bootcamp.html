@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coding Bootcamp Curriculum</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #1e2a38;
+            color: #d3d9e0;
+        }
+        .container {
+            padding: 0 20px;
+        }
+        header {
+            background: linear-gradient(135deg, #2c3e50, #1a252f);
+            color: #fff;
+            padding: 1rem 0;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+        header h1 {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            font-size: 2rem;
+            text-shadow: 0 0 10px rgba(52, 152, 219, 0.5);
+        }
+        .header-accordion .accordion-button {
+            background: #34495e;
+            color: #fff;
+            font-size: 1rem;
+            padding: 10px;
+        }
+        .header-accordion .accordion-button:not(.collapsed) {
+            background: #2980b9;
+        }
+        .header-accordion .accordion-body {
+            background: #2c3e50;
+            color: #d3d9e0;
+            padding: 10px;
+        }
+        .nav-tree {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .nav-tree li {
+            position: relative;
+            padding: 5px 0 5px 25px;
+        }
+        .nav-tree ul {
+            list-style: none;
+            padding-left: 20px;
+            margin: 0;
+        }
+        .nav-tree a {
+            color: #3498db;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .nav-tree a:hover {
+            color: #e74c3c;
+        }
+        .nav-tree i {
+            color: #3498db;
+            margin-right: 8px;
+            font-size: 0.9rem;
+        }
+        .nav-tree .suggestions-item {
+            text-align: center;
+            padding: 10px 0;
+        }
+        .accordion-button {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.25rem;
+            color: #3498db;
+            background: #2c3e50;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        .accordion-button:not(.collapsed) {
+            color: #fff;
+            background: #2980b9;
+        }
+        .accordion-body {
+            background: #34495e;
+            border-radius: 0 0 8px 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        h1 {
+            color: #ecf0f1;
+            text-align: center;
+            padding: 1.5rem 0;
+            text-shadow: 0 0 8px rgba(52, 152, 219, 0.4);
+        }
+        h3 {
+            color: #1abc9c;
+        }
+        pre {
+            background: #2c3e50;
+            color: #ecf0f1;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: inset for 0 1px 3px rgba(0, 0, 0, 0.3);
+            overflow-x: auto;
+        }
+        .warning {
+            color: #e74c3c;
+            font-weight: bold;
+        }
+        .highlight {
+            color: #9b59b6;
+            font-weight: bold;
+        }
+        footer {
+            background: #1a252f;
+            color: #d3d9e0;
+            padding: 2rem 0;
+            margin-top: 2rem;
+            box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.3);
+        }
+        footer a {
+            color: #3498db;
+            text-decoration: none;
+        }
+        footer a:hover {
+            color: #e74c3c;
+        }
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.5rem;
+            }
+            .accordion-button {
+                font-size: 1rem;
+            }
+            .container {
+                padding: 0 10px;
+            }
+            .nav-tree li {
+                padding-left: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+<header>
+    <h1>Coding Bootcamp 2025</h1>
+    <div class="container header-accordion">
+        <div class="accordion" id="headerAccordion">
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingNav">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNav" aria-expanded="true" aria-controls="collapseNav">
+                        <i class="bi bi-folder me-2"></i> Navigation
+                    </button>
+                </h2>
+                <div id="collapseNav" class="accordion-collapse collapse show" aria-labelledby="headingNav" data-bs-parent="#headerAccordion">
+                    <div class="accordion-body">
+                        <ul class="nav-tree">
+                            <li><i class="bi bi-folder-fill"></i> Bootcamp</li>
+                            <ul>
+                                <li><i class="bi bi-info-circle"></i> <a href="#intro">Introduction</a></li>
+                                <li><i class="bi bi-gear"></i> <a href="#setup">Setup Instructions</a></li>
+                                <li><i class="bi bi-tools"></i> <a href="#intellij">IntelliJ Setup</a></li>
+                                <li><i class="bi bi-git"></i> <a href="#git">Git Setup</a></li>
+                                <li><i class="bi bi-book"></i> Lessons</li>
+                                <ul>
+                                    <li><i class="bi bi-file-code"></i> <a href="#week1">Week 1</a></li>
+                                    <li><i class="bi bi-brush"></i> <a href="#week2">Week 2</a></li>
+                                    <li><i class="bi bi-code-slash"></i> <a href="#week3">Week 3</a></li>
+                                    <li><i class="bi bi-code-square"></i> <a href="#week4">Week 4</a></li>
+                                    <li><i class="bi bi-terminal"></i> <a href="#week5">Week 5</a></li>
+                                    <li><i class="bi bi-server"></i> <a href="#week6">Week 6</a></li>
+                                    <li><i class="bi bi-cup-hot"></i> <a href="#week7">Week 7</a></li>
+                                    <li><i class="bi bi-bootstrap"></i> <a href="#week8">Week 8</a></li>
+                                    <li><i class="bi bi-rocket-takeoff"></i> <a href="#week9-10">Weeks 9-10</a></li>
+                                    <li><i class="bi bi-trophy"></i> <a href="#final">Final Capstone</a></li>
+                                </ul>
+                            </ul>
+                            <li class="suggestions-item"><i class="bi bi-lightbulb"></i> <a href="#suggestions">Suggestions</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="container my-4">
+    <div class="accordion" id="curriculumAccordion">
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingIntro">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseIntro" aria-expanded="true" aria-controls="collapseIntro">
+                    <i class="bi bi-book me-2"></i> Introduction
+                </button>
+            </h2>
+            <div id="collapseIntro" class="accordion-collapse collapse show" aria-labelledby="headingIntro" data-bs-parent="#curriculumAccordion">
+                <div class="accordion-body">
+                    <h1>Coding Bootcamp Curriculum - April 2025</h1>
+                    <p>Welcome to your 10-week journey with Grok (xAI)! Learn <span class="highlight">JavaScript, Python, Java, HTML, and CSS</span> in IntelliJ IDEA. Daily sessions: <span class="highlight">3 hours (9:00 AM - 12:00 PM PDT)</span>, April 8 - ~April 25, 2025. Save as <code>bootcamp.html</code> in <code>C:\Coding\Bootcamp\curriculum</code>.</p>
+                    <h3>Human Factors & Design</h3>
+                    <ul>
+                        <li><strong>Pacing:</strong> 3-hour sessions, 5-10 min breaks hourly.</li>
+                        <li><strong>Visuals:</strong> Dark mode, Bootstrap, icons.</li>
+                        <li><strong>Progression:</strong> Beginner to intermediate, job-ready.</li>
+                        <li><strong>Tests:</strong> 80/100 pass score for lessons, weeks, and final.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingSetup">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSetup" aria-expanded="false" aria-controls="collapseSetup">
+                    <i class="bi bi-gear me-2"></i> Setup Instructions
+                </button>
+            </h2>
+            <div id="collapseSetup" class="accordion-collapse collapse" aria-labelledby="headingSetup" data-bs-parent="#curriculumAccordion">
+                <div class="accordion-body">
+                    <h3>Folder Structure</h3>
+                    <p><strong>Steps:</strong></p>
+                    <ol>
+                        <li>Open File Explorer (Windows key + E).</li>
+                        <li>Navigate to <code>C:\</code> (double-click “This PC” > “C:”).</li>
+                        <li>Right-click empty space > New > Folder, name it “Coding”.</li>
+                        <li>Double-click “Coding” to open it.</li>
+                        <li>Right-click > New > Folder, name it “Bootcamp”.</li>
+                        <li>Inside “Bootcamp”, right-click > New > Folder, name it “curriculum”.</li>
+                        <li>Save this file as <code>bootcamp.html</code> in <code>C:\Coding\Bootcamp\curriculum</code>.</li>
+                    </ol>
+                    <pre>
+C:\Coding\
+  └── Bootcamp\
+      ├── curriculum\
+      │   └── bootcamp.html
+      ├── week1\
+      └── [week2, etc.]
+            </pre>
+                </div>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingIntelliJ">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseIntelliJ" aria-expanded="false" aria-controls="collapseIntelliJ">
+                    <i class="bi bi-tools me-2"></i> IntelliJ Setup
+                </button>
+            </h2>
+            <div id="collapseIntelliJ" class="accordion-collapse collapse" aria-labelledby="headingIntelliJ" data-bs-parent="#curriculumAccordion">
+                <div class="accordion-body">
+                    <h3>Create Project in Existing IntelliJ</h3>
+                    <ol>
+                        <li>Open IntelliJ: Double-click desktop icon or search “IntelliJ IDEA” in Start menu.</li>
+                        <li>If a project is open: <code>File > Close Project</code> to return to Welcome screen.</li>
+                        <li>Click “New Project” on Welcome screen.</li>
+                        <li>In “New Project” window, select “Empty Project” (or “Java” if “Empty Project” isn’t listed).</li>
+                        <li>Set details:
+                            <ul>
+                                <li><strong>Name:</strong> Type “Bootcamp”.</li>
+                                <li><strong>Location:</strong> Click folder icon, navigate to <code>C:\Coding</code>, create “Bootcamp” folder if needed (right-click > New > Folder), select <code>C:\Coding\Bootcamp</code>, click “Open”.</li>
+                            </ul>
+                        <li>Click “Create”.</li>
+                        <li>In Project pane (press <code>Alt + 1</code> if hidden), right-click “Bootcamp” > <code>New > Directory</code>, name it “curriculum”.</li>
+                        <li>Repeat for “week1” to “week10”.</li>
+                        <li>Right-click “curriculum” > <code>New > File</code>, name it “bootcamp.html”.</li>
+                    </ol>
+                    <h3>Verify Python</h3>
+                    <ol>
+                        <li><code>File > Settings</code> (<code>Ctrl + Alt + S</code>).</li>
+                        <li>Click “Plugins” > “Installed” tab.</li>
+                        <li>Search “Python”, ensure “Enabled”. If not, check box, click “Apply” > “OK”, restart.</li>
+                    </ol>
+                    <h3>Add Live Edit</h3>
+                    <ol>
+                        <li><code>File > Settings > Plugins</code>.</li>
+                        <li>“Marketplace” tab, search “Live Edit”.</li>
+                        <li>Click “Install” > “OK”, restart IntelliJ.</li>
+                    </ol>
+                    <h3>Test Setup</h3>
+                    <ol>
+                        <li>Double-click “bootcamp.html” in “curriculum”.</li>
+                        <li>Paste: <pre><!DOCTYPE html><html><body><h1>Test</h1></body></html></pre></li>
+                        <li>Right-click file > <code>Open in Browser > Chrome</code>. If “Test” shows, setup works.</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingGit">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseGit" aria-expanded="false" aria-controls="collapseGit">
+                    <i class="bi bi-git me-2"></i> Git Setup
+                </button>
+            </h2>
+            <div id="collapseGit" class="accordion-collapse collapse" aria-labelledby="headingGit" data-bs-parent="#curriculumAccordion">
+                <div class="accordion-body">
+                    <h3>Install & Configure Git</h3>
+                    <ol>
+                        <li>Download Git: <a href="https://git-scm.com">git-scm.com</a>.</li>
+                        <li>Double-click installer, click “Next” through defaults, then “Finish”.</li>
+                        <li>In IntelliJ, press <code>Alt + F12</code> (terminal).</li>
+                        <li>Type <code>git --version</code>, press Enter (e.g., “git version 2.43.0” confirms install).</li>
+                        <li>Configure:
+                            <pre>git config --global user.name "Javier P Estrada"
+git config --global user.email "estrada.javier.525@gmail.com"</pre></li>
+                    </ol>
+                    <h3>Initialize Repo</h3>
+                    <ol>
+                        <li>Open <code>C:\Coding\Bootcamp</code> in IntelliJ (<code>File > Open</code>, select folder, click “OK”).</li>
+                        <li><code>VCS > Enable Version Control Integration</code>.</li>
+                        <li>Select “Git” > “OK”.</li>
+                        <li>On GitHub: Sign in, click “+” > “New repository”.</li>
+                        <li>Name it “Coding-Bootcamp”, set public, click “Create repository”.</li>
+                        <li>Copy HTTPS URL (e.g., <code>https://github.com/yourusername/Coding-Bootcamp.git</code>).</li>
+                        <li>In IntelliJ: <code>VCS > Git > Remotes > Add</code>, paste URL, name it “origin”, click “OK”.</li>
+                        <li>Right-click “Bootcamp” in Project pane > <code>Git > Add</code>.</li>
+                        <li><code>VCS > Commit</code> (<code>Ctrl + K</code>), type “Initial commit”, click green checkmark.</li>
+                        <li><code>VCS > Git > Push</code> (<code>Ctrl + Shift + K</code>), click “Push”.</li>
+                    </ol>
+                    <h3>Strategies</h3>
+                    <ul>
+                        <li><strong>Subfolders:</strong> Commit <code>week1</code>, etc.</li>
+                        <li><strong>Commits:</strong> After tasks.</li>
+                        <li><strong>Branches:</strong> For intermediate challenges (<code>VCS > Git > Branches > New Branch</code>).</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingWeek1">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWeek1" aria-expanded="false" aria-controls="collapseWeek1">
+                    <i class="bi bi-file-code me-2"></i> Week 1: HTML Basics
+                </button>
+            </h2>
+            <div id="collapseWeek1" class="accordion-collapse collapse" aria-labelledby="headingWeek1" data-bs-parent="#curriculumAccordion">
+                <div class="accordion-body">
+                    <h3>Duration:</h3><p>Days 1-2 (6 hours)</p>
+                    <h3>Concepts:</h3><p>HTML structure, semantic tags, accessibility.</p>
+                    <h3>What We’ll Do:</h3><p><strong>Day 1:</strong> Structure (2h), Git (1h). <strong>Day 2:</strong> Semantics, test (3h).</p>
+                    <h3>Example:</h3>
+                    <pre><!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Javier’s Resume</title>
+</head>
+<body>
+  <header>
+    <h1>Javier’s Resume</h1>
+  </header>
+  <nav>
+    <a href="#skills">Skills</a>
+  </nav>
+  <main>
+    <section id="skills">
+      <h2>Skills</h2>
+      <p>Learning IT skills!</p>
+    </section>
+  </main>
+</body>
+</html></pre>
+                    <h3>Challenge:</h3><p><strong>Beginner:</strong> Add <code><nav></code> with 3 links, <code><footer></code>.<br><strong>Intermediate:</strong> Add <code><form></code> (name, email).</p>
+                    <h3>Expectations:</h3><p>Valid HTML, semantics, Git commits.</p>
+                    <h3>End-of-Lesson Test (Day 1):</h3>
+                    <p>Score 80/100 to pass:</p>
+                    <ol>
+                        <li>(20 pts) Explain <code><header></code> vs. <code><div></code>.</li>
+                        <li>(30 pts) Write a basic HTML page with 3 tags.</li>
+                        <li>(50 pts) Commit your file to Git, show me the commit message.</li>
+                    </ol>
+                    <h3>Weekly Final Test (Day 2):</h3>
+                    <p>Score 80/100:</p>
+                    <ol>
+                        <li>(30 pts) Create an HTML page with 5 semantic tags.</li>
+                        <li>(30 pts) Explain accessibility benefits of <code>alt</code>.</li>
+                        <li>(40 pts) Push to GitHub, show me the repo.</li>
+                    </ol>
+                    <h3>Git Steps:</h3><p><code>VCS > Git > Add</code>, <code>Ctrl + K</code> (“Initial resume”), <code>Ctrl + Shift + K</code>.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingWeek2">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWeek2" aria-expanded="false" aria-controls="collapseWeek2">
+                    <i class="bi bi-brush me-2"></i> Week 2: CSS Basics
+                </button>
+            </h2>
+            <div id="collapseWeek2" class="accordion-collapse collapse" aria-labelledby="headingWeek2" data-bs-parent="#curriculumAccordion">
+                <div class="accordion-body">
+                    <h3>Duration:</h3><p>Days 3-4 (6 hours)</p>
+                    <h3>Concepts:</h3><p>Selectors, properties, box model, media queries.</p>
+                    <h3>What We’ll Do:</h3><p><strong>Day 3:</strong> Basics (2h), Git branch (1h). <strong>Day 4:</strong> Responsive (3h).</p>
+                    <h3>Example:</h3>
+                    <pre>body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+}
+header {
+  background: #333;
+  color: white;
+  padding: 15px;
+}
+@media (max-width: 600px) {
+  h1 { font-size: 1.2em; }
+}</pre>
+                    <h3>Challenge:</h3><p><strong>Beginner:</strong> Style with colors/fonts.<br><strong>Intermediate:</strong> Hover effects on <code><nav></code>.</p>
+                    <h3>Expectations:</h3><p>Consistent styling, responsive basics.</p>
+                    <h3>End-of-Lesson Test (Day 3):</h3>
+                    <p>Score 80/100:</p>
+                    <ol>
+                        <li>(30 pts) Style an HTML element with 3 properties.</li>
+                        <li>(20 pts) Explain box model components.</li>
+                        <li>(50 pts) Create a branch, commit changes.</li>
+                    </ol>
+                    <h3>Weekly Final Test (Day 4):</h3>
+                    <p>Score 80/100:</p>
+                    <ol>
+                        <li>(40 pts) Style a page with media query.</li>
+                        <li>(30 pts) Explain CSS specificity.</li>
+                        <li>(30 pts) Merge branch, push to GitHub.</li>
+                    </ol>
+                    <h3>Git Steps:</h3><p><code>Ctrl + K</code> (“Styled resume”), branch “week2-hover”, merge, push.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingWeek3">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWeek3" aria-expanded="false" aria-controls="collapseWeek3">
+                    <i class="bi bi-code-slash me-2"></i> Week 3: JavaScript Basics
+                </button>
+            </h2>
+            <div id="collapseWeek3" class="accordion-collapse collapse" aria-labelledby="headingWeek3" data-bs-parent="#curriculumAccordion">
+                <div class="accordion-body">
+                    <h3>Duration:</h3><p>Days 5-7 (9 hours)</p>
+                    <h3>Concepts:</h3><p>Variables, functions, events, DOM.</p>
+                    <h3>What We’ll Do:</h3><p><strong>Day 5:</strong> Basics (3h). <strong>Day 6:</strong> Events (3h). <strong>Day 7:</strong> Debug (3h).</p>
+                    <h3>Example:</h3>
+                    <pre>function updateSkills() {
+  const skill = prompt("Add a skill:");
+  document.querySelector("#skills p").textContent += `, ${skill}`;
+}
+document.querySelector("button").addEventListener("click", updateSkills);</pre>
+                    <h3>Challenge:</h3><p><strong>Beginner:</strong> Name alert button.<br><strong>Intermediate:</strong> Skill counter.</p>
+                    <h3>Expectations:</h3><p>Functional JS, DOM updates.</p>
+                    <h3>End-of-Lesson Test (Day 6):</h3>
+                    <p>Score 80/100:</p>
+                    <ol>
+                        <li>(30 pts) Write a function with an event listener.</li>
+                        <li>(20 pts) Explain DOM manipulation.</li>
+                        <li>(50 pts) Debug a simple JS error in IntelliJ.</li>
+                    </ol>
+                    <h3>Weekly Final Test (Day 7):</h3>
+                    <p>Score 80/100:</p>
+                    <ol>
+                        <li>(40 pts) Build a page with 2 interactive elements.</li>
+                        <li>(30 pts) Explain event bubbling.</li>
+                        <li>(30 pts) Push JS file to GitHub.</li>
+                    </ol>
+                    <h3>Git Steps:</h3><p>Add <code>script.js</code>, <code>Ctrl + K</code> (“JS interactivity”), push.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingWeek4">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWeek4" aria-expanded="false" aria-controls="collapseWeek4">
+                    <i class="bi bi-code-square me-2"></i> Week 4: Intermediate JavaScript
+                </button>
+            </h2>
+            <div id="collapseWeek4" class="accordion-collapse collapse" aria-labelledby="headingWeek4" data-bs-parent="#curriculumAccordion">
+                <div class="accordion-body">
+                    <h3>Duration:</h3><p>Days 8-10 (9 hours)</p>
+                    <h3>Concepts:</h3><p>Arrays, loops, conditionals, Fetch API.</p>
+                    <h3>What We’ll Do:</h3><p><strong>Day 8:</strong> Arrays/loops (3h). <strong>Day 9:</strong> API (3h). <strong>Day 10:</strong> Test (3h).</p>
+                    <h3>Example:</h3>
+                    <pre>fetch("https://api.quotable.io/random")
+  .then(res => res.json())
+  .then(data => document.querySelector("p").textContent = data.content);</pre>
+                    <h3>Challenge:</h3><p><strong>Beginner:</strong> List skills from array.<br><strong>Intermediate:</strong> Fetch quote.</p>
+                    <h3>Expectations:</h3><p>Data handling, API use.</p>
+                    <h3>End-of-Lesson Test (Day 9):</h3>
+                    <p>Score 80/100:</p>
+                    <ol>
+                        <li>(30 pts) Write a loop to log an array.</li>
+                        <li>(20 pts) Explain Fetch API steps.</li>
+                        <li>(50 pts) Fetch data, display it.</li>
+                    </ol>
+                    <h3>Weekly Final Test (Day 10):</h3>
+                    <p>Score 80/100:</p>
+                    <ol>
+                        <li>(40 pts) Build a page with array-driven content.</li>
+                        <li>(30 pts) Explain async vs. sync.</li>
+                        <li>(30 pts) Push to GitHub.</li>
+                    </ol>
+                    <h3>Git Steps:</h3><p><code>Ctrl + K</code> (“Added API”), push.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingWeek5">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWeek5" aria-expanded="false" aria-controls="collapseWeek5">
+                    <i class="bi bi-terminal me-2"></i> Week 5: Python Basics
+                </button>
+            </h2>
+            <div id="collapseWeek5" class="accordion-collapse collapse" aria-labelledby="headingWeek5" data-bs-parent="#curriculumAccordion">
+                <div class="accordion-body">
+                    <h3>Duration:</h3><p>Days 11-12 (6 hours)</p>
+                    <h3>Concepts:</h3><p>Syntax, functions, lists, dictionaries.</p>
+                    <h3>What We’ll Do:</h3><p><strong>Day 11:</strong> Basics (3h). <strong>Day 12:</strong> Data structs (3h).</p>
+                    <h3>Example:</h3>
+                    <pre>def print_skills(skills):
+  for skill in skills:
+    print(f"- {skill}")
+print_skills(["HTML", "CSS"])</pre>
+                    <h3>Challenge:</h3><p><strong>Beginner:</strong> Print skills list.<br><strong>Intermediate:</strong> Filter by category.</p>
+                    <h3>Expectations:</h3><p>Clean Python, data handling.</p>
+                    <h3>End-of-Lesson Test (Day 11):</h3>
+                    <p>Score 80/100:</p>
+                    <ol>
+                        <li>(30 pts) Write a function with a list.</li>
+                        <li>(20 pts) Explain Python indentation.</li>
+                        <li>(50 pts) Run script in IntelliJ.</li>
+                    </ol>
+                    <h3>Weekly Final Test (Day 12):</h3>
+                    <p>Score 80/100:</p>
+                    <ol>
+                        <li>(40 pts) Build a script with dictionary.</li>
+                        <li>(30 pts) Explain list vs. dict.</li>
+                        <li>(30 pts) Push to GitHub.</li>
+                    </ol>
+                    <h3>Git Steps:</h3><p>Add <code>skills.py</code>, <code>Ctrl + K</code> (“Python skills”), push.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingWeek6">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWeek6" aria-expanded="false" aria-controls="collapseWeek6">
+                    <i class="bi bi-server me-2"></i> Week 6: Intermediate Python
+                </button>
+            </h2>
+            <div id="collapseWeek6" class="accordion-collapse collapse" aria-labelledby="headingWeek6" data-bs-parent="#curriculumAccordion">
+                <div class="accordion-body">
+                    <h3>Duration:</h3><p>Days 13-14 (6 hours)</p>
+                    <h3>Concepts:</h3><p>File I/O, modules, Flask basics.</p>
+                    <h3>What We’ll Do:</h3><p><strong>Day 13:</strong> Files/modules (3h). <strong>Day 14:</strong> Flask (3h).</p>
+                    <h3>Example:</h3>
+                    <pre>from flask import Flask
+app = Flask(__name__)
+
+@app.route("/")
+def home():
+  return "My API!"
+
+if __name__ == "__main__":
+  app.run(debug=True)</pre>
+                    <h3>Challenge:</h3><p><strong>Beginner:</strong> Save/read skills.<br><strong>Intermediate:</strong> Flask <code>/skills</code>.</p>
+                    <h3>Expectations:</h3><p>File ops, web serving.</p>
+                    <h3>End-of-Lesson Test (Day 13):</h3>
+                    <p>Score 80/100:</p>
+                    <ol>
+                        <li>(30 pts) Write file I/O code.</li>
+                        <li>(20 pts) Explain module imports.</li>
+                        <li>(50 pts) Test file ops in IntelliJ.</li>
+                    </ol>
+                    <h3>Weekly Final Test (Day 14):</h3>
+                    <p>Score 80/100:</p>
+                    <ol>
+                        <li>(40 pts) Build a Flask app with 2 routes.</li>
+                        <li>(30 pts) Explain HTTP methods.</li>
+                        <li>(30 pts) Push to GitHub.</li>
+                    </ol>
+                    <h3>Git Steps:</h3><p>Add <code>app.py</code>, <code>Ctrl + K</code> (“Flask app”), push.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingWeek7">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWeek7" aria-expanded="false" aria-controls="collapseWeek7">
+                    <i class="bi bi-cup-hot me-2"></i> Week 7: Java Basics
+                </button>
+            </h2>
+            <div id="collapseWeek7" class="accordion-collapse collapse" aria-labelledby="headingWeek7" data-bs-parent="#curriculumAccordion">
+                <div class="accordion-body">
+                    <h3>Duration:</h3><p>Days 15-16 (6 hours)</p>
+                    <h3>Concepts:</h3><p>Classes, objects, control structures.</p>
+                    <h3>What We’ll Do:</h3><p><strong>Day 15:</strong> Basics (3h). <strong>Day 16:</strong> Practice (3h).</p>
+                    <h3>Example:</h3>
+                    <pre>public class Resume {
+  String name;
+  public Resume(String name) {
+    this.name = name;
+  }
+  public void display() {
+    System.out.println("Name: " + name);
+  }
+  public static void main(String[] args) {
+    Resume me = new Resume("Javier");
+    me.display();
+  }
+}</pre>
+                    <h3>Challenge:</h3><p><strong>Beginner:</strong> <code>Skill</code> class.<br><strong>Intermediate:</strong> Skills list in <code>Resume</code>.</p>
+                    <h3>Expectations:</h3><p>OOP fundamentals.</p>
+                    <h3>End-of-Lesson Test (Day 15):</h3>
+                    <p>Score 80/100:</p>
+                    <ol>
+                        <li>(30 pts) Write a class with a method.</li>
+                        <li>(20 pts) Explain <code>this</code> keyword.</li>
+                        <li>(50 pts) Run in IntelliJ.</li>
+                    </ol>
+                    <h3>Weekly Final Test (Day 16):</h3>
+                    <p>Score 80/100:</p>
+                    <ol>
+                        <li>(40 pts) Build a class with a loop.</li>
+                        <li>(30 pts) Explain OOP principles.</li>
+                        <li>(30 pts) Push to GitHub.</li>
+                    </ol>
+                    <h3>Git Steps:</h3><p>Add <code>Resume.java</code>, <code>Ctrl + K</code> (“Java resume”), push.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingWeek8">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWeek8" aria-expanded="false" aria-controls="collapseWeek8">
+                    <i class="bi bi-bootstrap me-2"></i> Week 8: Intermediate Java
+                </button>
+            </h2>
+            <div id="collapseWeek8" class="accordion-collapse collapse" aria-labelledby="headingWeek8" data-bs-parent="#curriculumAccordion">
+                <div class="accordion-body">
+                    <h3>Duration:</h3><p>Days 17-18 (6 hours)</p>
+                    <h3>Concepts:</h3><p>Inheritance, Spring Boot basics.</p>
+                    <h3>What We’ll Do:</h3><p><strong>Day 17:</strong> Inheritance (3h). <strong>Day 18:</strong> Spring (3h).</p>
+                    <h3>Example:</h3>
+                    <pre>@RestController
+public class SkillController {
+  @GetMapping("/skills")
+  public List<String> getSkills() {
+    return Arrays.asList("Java", "Python");
+  }
+}</pre>
+                    <h3>Challenge:</h3><p><strong>Beginner:</strong> Subclass <code>Skill</code>.<br><strong>Intermediate:</strong> Spring <code>/resume</code>.</p>
+                    <h3>Expectations:</h3><p>OOP depth, REST basics.</p>
+                    <h3>End-of-Lesson Test (Day 17):</h3>
+                    <p>Score 80/100:</p>
+                    <ol>
+                        <li>(30 pts) Write an inherited class.</li>
+                        <li>(20 pts) Explain polymorphism.</li>
+                        <li>(50 pts) Test in IntelliJ.</li>
+                    </ol>
+                    <h3>Weekly Final Test (Day 18):</h3>
+                    <p>Score 80/100:</p>
+                    <ol>
+                        <li>(40 pts) Build a Spring endpoint.</li>
+                        <li>(30 pts) Explain REST principles.</li>
+                        <li>(30 pts) Push to GitHub.</li>
+                    </ol>
+                    <h3>Git Steps:</h3><p><code>Ctrl + K</code> (“Spring app”), push.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingWeek9-10">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWeek9-10" aria-expanded="false" aria-controls="collapseWeek9-10">
+                    <i class="bi bi-rocket-takeoff me-2"></i> Weeks 9-10: Integration & Projects
+                </button>
+            </h2>
+            <div id="collapseWeek9-10" class="accordion-collapse collapse" aria-labelledby="headingWeek9-10" data-bs-parent="#curriculumAccordion">
+                <div class="accordion-body">
+                    <h3>Duration:</h3><p>Days 19-23 (15 hours)</p>
+                    <h3>Concepts:</h3><p>Full-stack dev, deployment.</p>
+                    <h3>What We’ll Do:</h3><p><strong>Days 19-21:</strong> Task Tracker (9h). <strong>Days 22-23:</strong> Deploy (6h).</p>
+                    <h3>Example:</h3><p>HTML/CSS/JS front-end, Flask/Spring backend.</p>
+                    <h3>Challenge:</h3><p><strong>Beginner:</strong> Multi-page portfolio.<br><strong>Intermediate:</strong> Add auth (e.g., Clerk).</p>
+                    <h3>Expectations:</h3><p>Full-stack app, GitHub portfolio.</p>
+                    <h3>End-of-Lesson Test (Day 21):</h3>
+                    <p>Score 80/100:</p>
+                    <ol>
+                        <li>(30 pts) Connect front-end to backend.</li>
+                        <li>(20 pts) Explain full-stack flow.</li>
+                        <li>(50 pts) Test app locally.</li>
+                    </ol>
+                    <h3>Weekly Final Test (Day 23):</h3>
+                    <p>Score 80/100:</p>
+                    <ol>
+                        <li>(40 pts) Deploy app to Heroku.</li>
+                        <li>(30 pts) Explain deployment steps.</li>
+                        <li>(30 pts) Push final to GitHub.</li>
+                    </ol>
+                    <h3>Git Steps:</h3><p>Commit per milestone, push final.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingFinal">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFinal" aria-expanded="false" aria-controls="collapseFinal">
+                    <i class="bi bi-trophy me-2"></i> Final Capstone Project
+                </button>
+            </h2>
+            <div id="collapseFinal" class="accordion-collapse collapse" aria-labelledby="headingFinal" data-bs-parent="#curriculumAccordion">
+                <div class="accordion-body">
+                    <h3>Capstone:</h3><p>Build a <strong>Task Manager App</strong>: HTML/CSS/JS front-end, Flask or Spring backend, deployed.</p>
+                    <h3>Requirements:</h3>
+                    <ul>
+                        <li>CRUD operations.</li>
+                        <li>Responsive design.</li>
+                        <li>GitHub repo with README.</li>
+                    </ul>
+                    <h3>Final Test:</h3>
+                    <p>Score 80/100 (Day 23):</p>
+                    <ol>
+                        <li>(30 pts) Demo app functionality.</li>
+                        <li>(30 pts) Explain code structure.</li>
+                        <li>(20 pts) Discuss challenges.</li>
+                        <li>(20 pts) Show deployed app and GitHub link.</li>
+                    </ol>
+                    <h3>Expectations:</h3><p>Job-ready portfolio.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingSuggestions">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSuggestions" aria-expanded="false" aria-controls="collapseSuggestions">
+                    <i class="bi bi-lightbulb me-2"></i> Additional Suggestions
+                </button>
+            </h2>
+            <div id="collapseSuggestions" class="accordion-collapse collapse" aria-labelledby="headingSuggestions" data-bs-parent="#curriculumAccordion">
+                <div class="accordion-body">
+                    <ul>
+                        <li><strong>Breaks:</strong> Stretch hourly.</li>
+                        <li><strong>Tools:</strong> Postman for APIs.</li>
+                        <li><strong>Portfolio:</strong> Add <code>README.md</code> with screenshots.</li>
+                        <li><span class="warning">Backup:</span> Copy <code>Bootcamp</code> to USB weekly.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="text-center">
+    <p>© 2025 Coding Bootcamp | Powered by Grok (xAI)</p>
+    <p><strong>Javier P Estrada</strong><br>
+        <i class="bi bi-telephone-fill me-2"></i> 1 (210) 379-7563<br>
+        <i class="bi bi-envelope-fill me-2"></i> <a href="mailto:estrada.javier.525@gmail.com">estrada.javier.525@gmail.com</a><br>
+        <i class="bi bi-linkedin me-2"></i> <a href="https://www.linkedin.com/in/javier-p-estrada/" target="_blank">LinkedIn Profile</a>
+    </p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
